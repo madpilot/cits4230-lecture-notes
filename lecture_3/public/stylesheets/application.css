@@ -1,0 +1,162 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-color: #ff6600;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb9541), to(#ff6600));
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: static;
+}
+
+.container {
+  width: 960px;
+  margin: 36px auto 12px auto;
+  background-color: #5a5a5a;
+  border: 5px solid #333;
+  -webkit-border-radius: 10px;
+}
+
+a {
+  color: #ddd;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  text-shadow: 2px 2px 1px #000;
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  margin: 0 5px;
+  padding: 12px;
+  border-top: 1px solid #888;
+  text-shadow: 2px 2px 1px #000;
+  text-align: center;
+  font-size: 28px;
+  line-height: 28px;
+}
+
+nav {
+  display: block;
+  padding: 12px;
+  float: left;
+  width: 240px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+nav li.new {
+  margin-top: 24px;
+  font-size: 10px;
+  text-shadow: 0 0 0 transparent;
+}
+
+nav li {
+  list-style-type: none
+}
+
+section {
+  min-height: 360px;
+  padding: 12px;
+  text-shadow: -1px -1px 1px #333;
+  margin-left: 252px;
+}
+
+section ul.pages {
+  padding-left: 0;
+}
+
+section ul.pages li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+section fieldset {
+  border: 0px;
+}
+
+section fieldset legend {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  padding-bottom: 24px;
+}
+
+section fieldset label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+section fieldset label span.text-label {
+  font-weight: bold;
+  display: block;
+}
+
+section fieldset label input, section fieldset label textarea {
+  width: 480px;
+  font-size: 16px;
+  padding: 4px 0;
+  border-top: 2px solid #111;
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #999;
+  border-left: 2px solid #111;
+  background-color: #333;
+  -webkit-border-radius: 5px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+section div.toolbox {
+  font-size: 10px;
+  text-shadow: 0 0 0 transparent;
+}
+
+section div.toolbox a {
+  color: #454545;
+}
+
+section div.toolbox a:hover {
+  color: #fff;
+}
+
+button {
+  font-size: 16px;
+  padding: 4px 0;
+  border: 2px solid #111;
+  background-color: #aaa;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aaa), to(#666));
+  background-position: top left;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 5px;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 12px 36px;
+}
+
+button:hover {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#888));
+}
+
+footer {
+  clear: both;
+  padding: 12px;
+  display: block;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}

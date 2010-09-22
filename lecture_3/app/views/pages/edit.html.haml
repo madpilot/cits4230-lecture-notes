@@ -1,0 +1,11 @@
+- form_tag page_path(@page), :method => 'put' do
+  %fieldset
+    %legend Update a Page
+  
+    = render :partial => 'pages/form'
+
+  %fieldset
+    %button{ :type => 'submit' }
+      Update
+    or
+    = link_to 'Cancel', page_path(@page)

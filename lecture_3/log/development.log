@@ -1,0 +1,1654 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (13.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20100920135630)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "copy" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100920135630')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-20 22:18:08) [GET]
+
+SyntaxError (/Users/myles/Projects/lecture_3/app/controllers/pages_controller.rb:18: syntax error, unexpected kRESCUE, expecting ')'
+  rescue ActiveRecord::RecordINvalid
+        ^
+/Users/myles/Projects/lecture_3/app/controllers/pages_controller.rb:31: syntax error, unexpected kRESCUE, expecting ')'
+  rescue ActiveRecord::RecordINvalid
+        ^):
+  
+
+Rendered rescues/_trace (108.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-20 22:18:27) [GET]
+
+SyntaxError (/Users/myles/Projects/lecture_3/app/controllers/pages_controller.rb:18: syntax error, unexpected kRESCUE, expecting ')'
+  rescue ActiveRecord::RecordInvalid
+        ^
+/Users/myles/Projects/lecture_3/app/controllers/pages_controller.rb:31: syntax error, unexpected kRESCUE, expecting ')'
+  rescue ActiveRecord::RecordInvalid
+        ^):
+  
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 22:18:45) [GET]
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 114ms (View: 73, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 22:19:16) [GET]
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 22:19:18) [GET]
+
+ActionView::MissingTemplate (Missing template pages/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 22:19:51) [GET]
+
+ActionView::MissingTemplate (Missing template pages/new.erb in view path app/views):
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 22:19:52) [GET]
+
+ActionView::MissingTemplate (Missing template pages/new.erb in view path app/views):
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 22:21:29) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (3.8ms)
+Completed in 67ms (View: 62, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2010-09-20 22:21:45) [POST]
+  Parameters: {"authenticity_token"=>"ka7Q2x6Z6ovH4bW9bGCIzSQYzMrbAt1XU/Yslq56vME=", "page"=>{"title"=>"Test Page", "copy"=>"<p>This is a page</p>"}}
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "copy") VALUES('2010-09-20 14:21:45', 'Test Page', '2010-09-20 14:21:45', '<p>This is a page</p>')[0m
+Redirected to http://localhost:3000/pages/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:21:45) [GET]
+  Parameters: {"id"=>"1"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/pages_controller.rb:7:in `show'
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:22:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:23:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:25:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:27:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:27:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 91ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:27:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:28:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+
+ActionView::TemplateError (undefined method `linkt_to' for #<ActionView::Base:0x102e11178>) on line #12 of app/views/layouts/application.html.erb:
+9:       <h1>Sample Application</h1>
+10:     </header>
+11:     <nav>
+12:       <li><%= linkt_to 'Home', pages_path %></li>
+13:       <% Page.find(:all).each do |page| -%>
+14:         <li><%= link_to page.title, page_path(page) %></li>
+15:       <% end -%>
+
+    app/views/layouts/application.html.erb:12
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (51.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:28:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:29:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:30:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:30:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:31:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:32:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:32:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:32:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:32:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:32:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:33:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:33:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:34:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:35:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:35:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:35:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:36:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:36:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:37:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:41:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (15.9ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (14.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 57ms (View: 20, DB: 30) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:42:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:43:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:43:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:44:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 32ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:44:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:44:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 27ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:44:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 64ms (View: 5, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:45:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 89ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:45:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:45:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:46:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:46:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:46:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:47:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:47:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:47:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:48:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:51:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 30ms (View: 5, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:51:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:51:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:52:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:52:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:52:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:52:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:53:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:53:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:53:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:53:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:53:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 82ms (View: 75, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:54:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 28ms (View: 22, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:55:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 30ms (View: 24, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:55:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 28ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:57:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:57:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 88ms (View: 82, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:57:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:58:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:58:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:58:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:59:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:59:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:59:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 22:59:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:00:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 86ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:00:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:01:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:01:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:02:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 41ms (View: 34, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:03:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:03:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:03:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:03:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:04:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:04:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:05:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:05:19) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:05:55) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 45ms (View: 41, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:06:22) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:06:36) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 88ms (View: 4, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:07:21) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:08:02) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:08:25) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:08:50) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:08:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:09:05) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (38.0ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 59ms (View: 54, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:09:29) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 27ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:10:32) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.8ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:10:42) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:10:58) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:11:14) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:11:28) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.8ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:11:39) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:12:02) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.9ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:12:09) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:12:47) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (2.2ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:13:08) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:13:38) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:14:10) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:14:49) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:15:04) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:15:17) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 90ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:15:23) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:15:43) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:15:58) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (2.2ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:16:46) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:17:12) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:17:23) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:17:30) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.8ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 92ms (View: 86, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:17:36) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:17:51) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.9ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:17:58) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:18:29) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:18:39) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (2.5ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:19:14) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:19:50) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (80.4ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 89ms (View: 84, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:19:58) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:20:04) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:20:08) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:20:24) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.8ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:20:33) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.7ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:20:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:22:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 111ms (View: 105, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-09-20 23:22:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (2.2ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 86ms (View: 80, DB: 1) | 200 OK [http://localhost/pages/1/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-09-20 23:22:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (1.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/pages/1/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:22:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-09-20 23:22:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (1.5ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/pages/1/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:23:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:23:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:23:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:24:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:24:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:24:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:25:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:25:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:25:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-20 23:25:49) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (1.6ms)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2010-09-20 23:26:03) [POST]
+  Parameters: {"authenticity_token"=>"ka7Q2x6Z6ovH4bW9bGCIzSQYzMrbAt1XU/Yslq56vME=", "page"=>{"title"=>"Test Page 2", "copy"=>"<p>This is a second test page</p>"}}
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "copy") VALUES('2010-09-20 15:26:03', 'Test Page 2', '2010-09-20 15:26:03', '<p>This is a second test page</p>')[0m
+Redirected to http://localhost:3000/pages/2
+Completed in 53ms (DB: 0) | 302 Found [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:26:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (80.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 137ms (View: 5, DB: 81) | 200 OK [http://localhost/pages/2]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:26:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:26:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/2]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-09-20 23:26:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (1.6ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/pages/2/edit]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:26:12) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:26:37) [GET]
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:27:15) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:27:34) [GET]
+  [4;35;1mPage Load (0.9ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 44ms (View: 6, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:29:33) [GET]
+  [4;35;1mPage Load (26.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 57ms (View: 26, DB: 26) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:29:53) [GET]
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:29:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#delete (for 127.0.0.1 at 2010-09-20 23:29:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/delete
+
+ActionView::TemplateError (form_tag outputs directly to the Haml template.
+Disregard its return value and use the - operator,
+or use capture_haml to get the value as a String.
+) on line #11 of app/views/pages/delete.html.haml:
+8:         Yes
+9:       or
+10:       = link_to 'No', page_path(@page)
+
+    haml (3.0.18) lib/haml/buffer.rb:139:in `format_script_false_false_false_false_false_false_false'
+    app/views/pages/delete.html.haml:11:in `_run_haml_app47views47pages47delete46html46haml'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (99.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#delete (for 127.0.0.1 at 2010-09-20 23:30:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/delete
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 124ms (View: 118, DB: 1) | 200 OK [http://localhost/pages/1/delete]
+
+
+Processing PagesController#destroy (for 127.0.0.1 at 2010-09-20 23:30:26) [DELETE]
+  Parameters: {"authenticity_token"=>"ka7Q2x6Z6ovH4bW9bGCIzSQYzMrbAt1XU/Yslq56vME=", "id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+  [4;35;1mPage Destroy (0.5ms)[0m   [0mDELETE FROM "pages" WHERE "id" = 1[0m
+
+NoMethodError (undefined method `redirect' for #<PagesController:0x1032cdef0>):
+  app/controllers/pages_controller.rb:42:in `destroy'
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#destroy (for 127.0.0.1 at 2010-09-20 23:30:40) [DELETE]
+  Parameters: {"authenticity_token"=>"ka7Q2x6Z6ovH4bW9bGCIzSQYzMrbAt1XU/Yslq56vME=", "id"=>"1"}
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=1):
+  app/controllers/pages_controller.rb:40:in `destroy'
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (87.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-20 23:30:43) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 106ms (View: 4, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-20 23:30:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/2]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-21 14:06:39) [GET]
+  [4;36;1mPage Load (1.2ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 169ms (View: 146, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-21 14:21:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 31ms (View: 25, DB: 1) | 200 OK [http://localhost/pages/2]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2010-09-21 14:22:05) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+Rendered pages/_form (19.4ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Completed in 65ms (View: 60, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2010-09-21 14:22:20) [POST]
+  Parameters: {"authenticity_token"=>"sNlgxxQCRnwZCTXl5rqIoVLlYU+Uc64UhJ3IMm2t6dI=", "page"=>{"title"=>"Demo Page", "copy"=>"<p>New PAge</p>"}}
+  [4;35;1mPage Create (8.5ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "copy") VALUES('2010-09-21 06:22:20', 'Demo Page', '2010-09-21 06:22:20', '<p>New PAge</p>')[0m
+Redirected to http://localhost:3000/pages/3
+Completed in 94ms (DB: 9) | 302 Found [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-21 14:22:20) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/3]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-09-21 14:22:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (1.5ms)
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 37ms (View: 31, DB: 1) | 200 OK [http://localhost/pages/3/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2010-09-21 14:22:36) [PUT]
+  Parameters: {"authenticity_token"=>"sNlgxxQCRnwZCTXl5rqIoVLlYU+Uc64UhJ3IMm2t6dI=", "id"=>"3", "page"=>{"title"=>"Demo Page", "copy"=>"<p>New Page</p>"}}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+  [4;35;1mPage Update (0.3ms)[0m   [0mUPDATE "pages" SET "updated_at" = '2010-09-21 06:22:36', "copy" = '<p>New Page</p>' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/pages/3
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/pages/3]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-21 14:22:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/3]
+
+
+Processing PagesController#delete (for 127.0.0.1 at 2010-09-21 14:22:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/delete
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 41ms (View: 35, DB: 1) | 200 OK [http://localhost/pages/3/delete]
+
+
+Processing PagesController#destroy (for 127.0.0.1 at 2010-09-21 14:22:43) [DELETE]
+  Parameters: {"authenticity_token"=>"sNlgxxQCRnwZCTXl5rqIoVLlYU+Uc64UhJ3IMm2t6dI=", "id"=>"3"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+  [4;35;1mPage Destroy (0.3ms)[0m   [0mDELETE FROM "pages" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/pages
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/pages/3]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-21 14:22:43) [GET]
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" [0m
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/pages]

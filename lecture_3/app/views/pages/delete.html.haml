@@ -1,0 +1,10 @@
+- form_tag page_path(@page), :method => 'delete' do
+  %fieldset
+    %p
+      Are you sure you want to delete this page?
+
+    %fieldset.buttons
+      %button{ :type => 'submit' }
+        Yes
+      or
+      = link_to 'No', page_path(@page)

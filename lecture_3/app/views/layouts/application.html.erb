@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Application <%= @page ? "- #{@page.title}" : '' %></title>
+    <%= stylesheet_link_tag 'application' %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sample Application</h1>
+      </header>
+      <nav>
+        <li><%= link_to 'Home', pages_path %></li>
+        <% Page.find(:all).each do |page| -%>
+          <li><%= link_to page.title, page_path(page) %></li>
+        <% end -%>
+        <li class="new"><%= link_to 'Create a new Page', new_page_path %></li>
+      </nav>
+      <section>
+        <%= yield %>
+      </section>
+      <footer>
+        Copyright &copy; 2010
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+- form_tag pages_path do
+  %fieldset
+    %legend Create a Page
+  
+    = render :partial => 'pages/form'
+
+  %fieldset
+    %button{ :type => 'submit' }
+      Save
+    or
+    = link_to 'Cancel', pages_path

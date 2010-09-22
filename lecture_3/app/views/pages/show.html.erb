@@ -1,0 +1,7 @@
+<h2><%=h @page.title %></h2>
+<%= @page.copy %>
+
+<div class="toolbox">
+  <%= link_to 'Edit', edit_page_path(@page) %>
+  <%= link_to 'Delete', delete_page_path(@page) %>
+</div>
