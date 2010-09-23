@@ -2,6 +2,8 @@ class CreateVariations < ActiveRecord::Migration
   def self.up
     create_table :variations do |t|
       t.string :name
+      t.string :value
+
       t.integer :cents
       t.integer :product_id
       t.timestamps
